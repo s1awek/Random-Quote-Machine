@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     doIt();
 
+
     function doIt() {
         var output = $.ajax({
             url: 'https://andruxnet-random-famous-quotes.p.mashape.com/', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
@@ -16,7 +17,10 @@ $(document).ready(function () {
                 document.getElementById("quote").innerHTML = data.quote;
                 document.getElementById("author").innerHTML = data.author;
                 //document.getElementById("category").innerHTML = data.category;
-
+                $("a").click(function () {
+                    $(this).attr("href", 'https://twitter.com/intent/tweet?text=' + data.quote + ' ~ ' + data.author);
+                    $(this).attr("target", "_blank");
+                });
             },
             error: function (err) {
                 document.getElementById("error").innerHTML = 'Error! Check console to see more details.';
@@ -32,4 +36,3 @@ $(document).ready(function () {
 
 
 });
-
