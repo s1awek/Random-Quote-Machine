@@ -28,6 +28,10 @@
 
 }
 
+
+body {
+  background: #fff url(/img/bg_p.jpg) no-repeat top left;
+}
 .container {
     position: relative;
     width: 1030px;
